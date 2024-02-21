@@ -35,8 +35,7 @@ function App() {
         </div>
         <div className={styles.repoList}>
           <ul>
-            {repoSelector.data!.length > 0 
-            ? repoSelector.data?.map((repo) => (
+            {repoSelector.data?.map((repo) => (
               <li key={repo.id}>
                 <h3> Nome do Repositório: ${repo.name} </h3>
                 <span>
@@ -46,10 +45,7 @@ function App() {
                 </span>
                 <a href={repo.git_url} target="_blank">Acessar</a> 
               </li>
-            ))
-          : (
-            <h3>Nenhum Repositório encontrado...</h3>
-            )}
+            ))}
           </ul>
         </div>
       </div>
