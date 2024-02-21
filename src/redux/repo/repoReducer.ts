@@ -15,6 +15,8 @@ const repoReducer = (state = initialState, action: RepoActions) => {
             return { ...state, pending: false, data: action.payload.repos }
         case RepoTypes.LOAD_FAILURE:
             return { ...state, pending: false, error: action.payload.error }
+        default:
+            return state;
     }
 }
 

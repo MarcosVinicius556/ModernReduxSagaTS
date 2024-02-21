@@ -6,4 +6,6 @@ const rootReducer = combineReducers({
     repo: repoReducer
 });
 
+export type RepoState = ReturnType<typeof rootReducer>;
+
 export default rootReducer;

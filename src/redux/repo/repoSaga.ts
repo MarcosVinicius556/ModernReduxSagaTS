@@ -6,15 +6,16 @@ import { call, put } from "redux-saga/effects";
 
 const loadReposByName = async (payload: { repoName: string }) => {
     const { data } = await apiService.get<IRepo>(`/${payload.repoName}/repos`);
+    
     return data;
 }
 
 export function* loadReposSaga(action: any) {
     try {
-        const response: { repos: IRepo[] } = yield call(loadReposByName, { repoName: action.payload.repoName })
-        
+        const response: IRepo[] = yield call(loadReposByName, { repoName: action.payload.value.repoName })
+
         yield put(loadSuccess({
-            repos: response.repos
+            repos: response
         }))
     } catch (error: any) {
         yield put(loadFailure({

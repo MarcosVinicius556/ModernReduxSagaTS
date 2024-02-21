@@ -4,6 +4,10 @@ import { RepoTypes } from "./repoActionTypes";
 export interface IRepo {
     id: number;
     name: string;
+    description: string;
+    git_url: string;
+    language: string;
+    created_at: Date
 }
 
 export interface IRepoState {
@@ -14,7 +18,6 @@ export interface IRepoState {
 
 export interface LoadReposPayload {
     value: { repoName: string }
-    callback: any
 }
 
 export interface LoadReposSuccessPayload {
